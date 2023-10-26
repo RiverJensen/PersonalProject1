@@ -10,11 +10,7 @@ const ModeButtons = () => {
         </td>
       </tr>
 
-      <tr>
-        <td>
-          <button> Delete</button>
-        </td>
-      </tr>
+      
     </div>
   );
 };

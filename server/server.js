@@ -1,4 +1,4 @@
-import  express  from "express";
+import express  from "express";
 import ViteExpress from 'vite-express'
 import morgan from "morgan";
 
@@ -24,6 +24,8 @@ let SONG_DATA = [
 ]
 
 //Routes go here
+app.get('/song', handlerFuntions.getSongInfo)
+
 
 //Open a Door to Server
-ViteExpress.listen(app, 1088,()=> console.log('Click ON Me HERE = http://localhost:1088'))
+ViteExpress.listen(app, 5555,()=> console.log('Click ON Me HERE = http://localhost:5555'))

@@ -1,21 +1,13 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import ModeButtons from './cpmponents/ModeButtons'
-import SongBox from './cpmponents/SongBox'
-import SongRow from './cpmponents/SongRow'
+import ModeButtons from './components/ModeButtons'
+import SongBox from './components/SongBox'
+import SongRow from './components/SongRow'
 
 
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <SongRow/>
-    </>
-  )
+function App ({initialSong}){
+  return <SongBox initialSongData = {initialSong}/>
 }
 
 export default App
