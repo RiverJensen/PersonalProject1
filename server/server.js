@@ -25,6 +25,9 @@ let SONG_DATA = [
 
 //Routes go here
 app.get('/song', handlerFuntions.getSongInfo)
+app.post('/addSong', handlerFuntions.addSong)
+app.delete('/deleteInvoice/:id', handlerFuntions.deleteSong)
+app.put('/editSong/:id',handlerFuntions.editSong)
 
 
 //Open a Door to Server

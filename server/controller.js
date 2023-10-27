@@ -1,3 +1,4 @@
+import SongBox from "../src/components/SongBox"
 
 let SONG_DATA = [
     {id:0, songname:'First Date',band:"Blink-182", upvote:undefined, url:"https://upload.wikimedia.org/wikipedia/en/d/de/Blink-182_-_Take_Off_Your_Pants_and_Jacket_cover.jpg"},
@@ -11,7 +12,45 @@ let SONG_DATA = [
     const handlerFuntions = {
         getSongInfo: (req,res) =>{
             res.send(SONG_DATA)
+        },
+
+        addSong: (req, res)=>{
+            const description = req.body.description
+            const newObj = {
+                id: globalId,
+                description: description,
+                songname: 'put new song name here',
+                band: 'put new band name here'
+            }
+            SONG_DATA.push(newObj)
+            globalId++
+            res.send(newObj)
 
         },
 
+        deleteSong: (req,res)=>{
+            const id = req.params.id
+
+            SONG_DATA = SONG_DATA.filter((song)=> inboice.id !== +id)
+
+            res.send("song deleted")
+        },
+
+        editSong: (req,res) => {
+            const {id} = req.params
+            const {songname, band, url} = req.body
+
+            const index = SONG_DATA.findIndex(song => song.id == id)
+            const songItem = SONG_DATA[index]
+
+            songItem.songname = songname
+            songItem.band = band
+            songItem.url = url
+        },
+
+        
+        
+
     }
+
+    export default handlerFuntions

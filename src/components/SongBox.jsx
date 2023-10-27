@@ -15,10 +15,59 @@ const SongBox = ({initialSongData}) => {
         key={id}
         id = {id}
         initialSongData = {{songname, band, upvote, url}}
+        initialISEditing = {isEditing}
+        deleteFunc = {() => deleteRow(id)}
         />
       )
   })
 }
+
+
+const addSong = async () => {
+  const responce = axios.post('/addSong', {description: 'Song description here'})
+  
+  setCurrentData([... currentData, responce.data])
+}
+
+export default SongBox
+
+
+
+const deletSong = async (ItemID) => {
+    const response = await axios.delete(`/deleteSong/${ItemID}`)
+    if (! response.data.error){
+      const filteredList = currentData.filter((songItem)=> songItem.id !== ItemID)
+
+      setCurrentData(filteredList)
+    }
+
+    return(
+      <Div>
+        <table>
+          <tbody>
+            {row}
+          </tbody>
+        </table>
+      </Div>
+    )
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // const SongBox = () => {
@@ -36,5 +85,3 @@ const SongBox = ({initialSongData}) => {
 //     </div>
 //   )
 // }
-
-export default SongBox

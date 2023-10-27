@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import SongBox from './SongBox'
+import axios from 'axios'
+import ModeButtons from './ModeButtons'
+import Pictrue from './Pictrue'
+import BandName from './BandName'
 
-export default function SongRow({initialSongData}){
+
+export default function SongRow({initialSongData, initialIsEditing, deletFunc,id,}){
   const [songname, setSongname] = useState(initialSongData.songname)
   const [band, setBand] = useState(initialSongData.band)
   const [url, setUrl] = useState(initialSongData.url)
@@ -13,13 +18,60 @@ export default function SongRow({initialSongData}){
         url: url
       }
 
-     
+      const responce = await axios.put(`editSong/${id}`,bodyObj)
+
+        if (!responce.data.error){
+          setEditMode(false)
+        } else {alert(responce.data.error)}
+
       }
+
+      const changEditMode = () => setEditMode(true)
 
       return (
 
-        Band
+        <div>
+          <tr>
+            <Picture/>
+
+
+
+
+
+
+
+          </tr>
+        </div>
       )
+
+
+        
+      return (
+        <tr>
+           <ModeButtons
+            isEditing={editMode}
+            saveClick={changNormalMode}
+            editClick= {changeEditMode}
+            funkyDelete = {deleteFunc}
+       />
+       <BandName
+            isEditing={editMode}
+            value={description}
+            onValueChange= {setDescription}
+       />
+       <Pictrue
+            isEditing={editMode}
+            value={rate}
+            onValueChange={setRate}
+         />
+       
+        
+        </tr>
+      )
+
+
+
+
   }
 
 
