@@ -4,6 +4,7 @@ import axios from 'axios'
 import ModeButtons from './ModeButtons'
 import Pictrue from './Pictrue'
 import BandName from './BandName'
+import SongName from './SongName'
 
 
 export default function SongRow({initialSongData, initialIsEditing, deletFunc,id,}){
@@ -28,21 +29,8 @@ export default function SongRow({initialSongData, initialIsEditing, deletFunc,id
 
       const changEditMode = () => setEditMode(true)
 
-      return (
-
-        <div>
-          <tr>
-            <Picture/>
-
-
-
-
-
-
-
-          </tr>
-        </div>
-      )
+      
+       
 
 
         
@@ -56,12 +44,18 @@ export default function SongRow({initialSongData, initialIsEditing, deletFunc,id
        />
        <BandName
             isEditing={editMode}
-            value={description}
+            value={band}
             onValueChange= {setDescription}
        />
        <Pictrue
             isEditing={editMode}
-            value={rate}
+            value={url}
+            onValueChange={setRate}
+         />
+
+        <SongName
+            isEditing={editMode}
+            value={songname}
             onValueChange={setRate}
          />
        
