@@ -1,10 +1,10 @@
 import React from 'react'
 
-const SongName = (SongName) => {
+const SongName = ({songName}) => {
+
   return (
     <div>
-
-        <p>{SongName}</p>
+        <p>{songName}</p>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import SongBox from "../src/components/SongBox"
+
 
 let SONG_DATA = [
     {id:0, songname:'First Date',band:"Blink-182", upvote:undefined, url:"https://upload.wikimedia.org/wikipedia/en/d/de/Blink-182_-_Take_Off_Your_Pants_and_Jacket_cover.jpg"},

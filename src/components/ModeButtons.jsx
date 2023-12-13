@@ -18,16 +18,16 @@ const ModeButtons = ( {isEditing, saveClick, editClick, funkyDelete, rateUp, rat
 
 
       <td>
-        <button onClick={saveClick}>Save</button>
+        {/* <button onClick={saveClick}>Save</button> */}
 
 
     </td>
   ) : (
     <td>
-        <button onClick={funkyDelete}>Delete</button>
+        {/* <button onClick={funkyDelete}>Delete</button>
         <button onClick={editClick}>Edit</button>
         <button onClick={rateUp}>+</button>
-        <button onClick={rateDown}></button>
+        <button onClick={rateDown}></button> */}
 
 
     </td>

@@ -11,3 +11,4 @@ const Pictrue = (url) => {
 }
 
 export default Pictrue
+
