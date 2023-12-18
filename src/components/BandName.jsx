@@ -1,13 +1,20 @@
 
 import React from 'react'
 
-const BandName = (band) => {
-  return (
+const BandName = (value, isEditing,onValueChange) => {
+  return isEditing?(
     <div>
-        <p>{band}</p>
+        <input
+        type='text'
+        value={value}
+        onChange={(e) => onValueChange(e.target.value)}/>
 
     </div>
-  )
+
+  ):
+  <td>
+    {value}
+  </td>
 }
 
 export default BandName

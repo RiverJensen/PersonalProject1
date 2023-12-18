@@ -2,13 +2,19 @@
 import { urlencoded } from 'express'
 import React from 'react'
 
-const Pictrue = (url) => {
-  return (
-    <Div>
-        <img src={url} alt="it did not work" />
-    </Div>
-  )
-}
+const Pictrue = (value, isEditing,onValueChange) => {
+  return isEditing?(
+    <div>
+        <img
+        type='text'
+        src={value}
+        onChange={(e) => onValueChange(e.target.value)}/>
 
-export default Pictrue
+    </div>
+
+  ):
+  <td>
+    <img src= "value" alt="hahah" />
+  </td>
+}
 
